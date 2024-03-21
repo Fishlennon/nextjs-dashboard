@@ -2,7 +2,8 @@ import AcmeLogo from '@/app/ui/acme-logo';
 import styles from './ui/home.module.css'
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { armata } from './ui/fonts';
+import { acme, montserrat } from './ui/fonts';
+import Image from 'next/image';
 
 export default function Page() {
   return (
@@ -13,7 +14,7 @@ export default function Page() {
       </div>
       <div className="mt-4 flex grow flex-col gap-4 md:flex-row">
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
-          <p className={` ${armata.className}text-xl text-gray-800 md:text-3xl md:leading-normal`}>
+          <p className={` ${montserrat.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Welcome to Acme.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
@@ -29,6 +30,19 @@ export default function Page() {
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
+          {/* <img src='/hero-desktop.png' alt="screenshots of the dashboard" /> */ /*este es el modo clasico, la imagen pesa mas y esta en formato png, con la forma de next, Image, disminuye tamaño y cambia formato segun el navegador*/} 
+          
+          <Image src='/hero-desktop.png' 
+           alt="screenshots of the dashboard"
+           width={1000}
+           height={760} 
+           className='hidden md:block' /* esto hace que en un determinado tamaño la imagen se borra, como pa celulares*//> 
+
+          <Image src='/hero-mobile.png' 
+           alt="screenshots of the dashboard"
+           width={560}
+           height={620} 
+           className='block md:hidden' /* esto hace que cuando la imagen desktop no se vea, esta se renderize y viceversa*//> 
         </div>
       </div>
     </main>

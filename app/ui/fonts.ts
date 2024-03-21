@@ -1,6 +1,7 @@
-import {Acme, Armata} from 'next/font/google'
+import {Acme, Montserrat} from 'next/font/google'
 
 export const acme = Acme({subsets: ['latin'], weight: ['400']})
-export const armata = Armata({
+
+export const montserrat = Montserrat({
     subsets: ['latin'], 
     weight: ['400']})

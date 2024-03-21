@@ -1,4 +1,4 @@
-import { acme } from './ui/fonts';
+import { acme, montserrat } from './ui/fonts';
 import './ui/global.css'
 
 export default function RootLayout({
