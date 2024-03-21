@@ -1,3 +1,6 @@
+import { acme } from './ui/fonts';
+import './ui/global.css'
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${acme.className} antialiased`}>
+        <h1>Afuera de children, el page</h1>
+        
+        {children}
+
+        
+        </body>
     </html>
   );
 }
