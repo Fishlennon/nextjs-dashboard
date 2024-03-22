@@ -12,7 +12,9 @@ export default function RootLayout({
         <h1>Afuera de children, el page</h1>
         
         {children}
-
+          <footer>
+            esto es el footer 
+          </footer>
         
         </body>
     </html>

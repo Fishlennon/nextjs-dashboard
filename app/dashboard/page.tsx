@@ -1,7 +1,12 @@
-const MiComponente = () => (
+const dashboard = () => (
     <div>
-      <h1>Hola, soy un componente funcional</h1>
+      <h1>Hola, soy un componente funcional dashboard</h1>
     </div>
   );
 
-  export default MiComponente;
+  export default dashboard;
+
+
+  // export default function Page(){
+  //   return <p>wenaa</p>
+  // }
