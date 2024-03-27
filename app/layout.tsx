@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${acme.className} antialiased`}>
-        <h1>Afuera de children, el page</h1>
+        <h1>Afuera de children, children es el primer page, la landing</h1>
         
         {children}
           <footer>
