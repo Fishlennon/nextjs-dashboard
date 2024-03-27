@@ -1,15 +1,19 @@
+import { Suspense } from "react";
 import { fetchLatestInvoices, fetchRevenue } from "../lib/data";
 import LatestInvoices from "../ui/dashboard/latest-invoices";
 import RevenueChart from "../ui/dashboard/revenue-chart";
 import { acme, lusitana, montserrat } from "../ui/fonts";
+import { LatestInvoicesSkeleton, RevenueChartSkeleton } from "../ui/skeletons";
 
 const dashboard = async () => {
 
   // const res =  await fetch('https://api.example.com')
   // const json = await res.json()
   // console.log(json)
-const revenue = await fetchRevenue()
-const latestInvoices = await fetchLatestInvoices()
+
+// const revenue = await fetchRevenue()
+// const latestInvoices = await fetchLatestInvoices()
+
 // console.log(revenue);
 
   return(
@@ -28,8 +32,15 @@ const latestInvoices = await fetchLatestInvoices()
     /> */}
     </div>
     <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-    <RevenueChart revenue={revenue} />
-    <LatestInvoices latestInvoices={latestInvoices} />
+        {/* <RevenueChart revenue={revenue} /> */}
+    {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
+    <Suspense fallback={<RevenueChartSkeleton/>}>
+        <RevenueChart/>
+    </Suspense>
+    <Suspense fallback={<LatestInvoicesSkeleton/>}>
+        <LatestInvoices/>
+    </Suspense>
+
     </div>
     </main>
   )
